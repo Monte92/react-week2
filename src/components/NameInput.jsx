@@ -1,20 +1,19 @@
-import { useState } from 'react'
 
-export default function NameInput({ onNameChange }) {
 
-    const [name, setName] = useState("");
+export default function NameInput({ name, onNameChange }) {
 
     function handleChange(e) {
-        const newName = e.target.value;
-        setName(newName);
-        onNameChange(newName);
+        onNameChange(e.target.value);
     }
 
     return(
-        <input type="text"
-         placeholder="Enter name here"
-         value={name}
-         onChange={handleChange}
-         />
+        <div> 
+            <input
+                type="text"
+                placeholder="Enter name here"
+                value={name}
+                onChange={handleChange}
+            />
+        </div>
     )
 }
